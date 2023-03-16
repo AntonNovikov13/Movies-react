@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
+#root {
+    background-blend-mode: screen;
+	background:
+		linear-gradient(limegreen, transparent),
+		linear-gradient(90deg, skyblue, transparent),
+		linear-gradient(-90deg, coral, transparent);
+}
+
+nav {
+    padding: 0 1rem;
+}
+
+.content {
+    min-height: calc(100vh - 70px - 64px);
+    padding: 1.5rem 0;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    z-index: 1;
+}
+
+.search-btn {
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+}
+
+label:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.preloader-wrapper  {
+    width: 150px;
+    height: 150px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    margin-right: -50%;
+}
+
+.modal {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    z-index: 5;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal__content {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+    transform: scale(0.5);
+    transition: 0.4s all;
+    width: 50vw;
+}
+
+.modal-content__desc > h4,
+h6 {
+    position: relative;
+    top: -40px;
+    left: 300px;
+    font-size: 30px;
+}
+.modal-title {
+    position: relative;
+    left: 15px;
+}
+.modal-type {
+    position: relative;
+    left: 15px;
+}
+.modal__content.active {
+    transform: scale(0.7);
+}
+
+.pagination {
+    width: 400px;
+    position: relative;
+    left: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    padding-bottom: 32px;
+    background-color: goldenrod;
+
+}
